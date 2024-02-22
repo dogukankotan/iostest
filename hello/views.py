@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
+import json
 # Create your views here.
 
 asset = {
@@ -93,8 +93,8 @@ asset = {
 }
 
 def index(request):
-    return JsonResponse(asset, json_dumps_params={'indent': 2}, safe=False)
+    return JsonResponse({}, json_dumps_params={'indent': 2}, safe=False)
 
 def asset(request):
-    return JsonResponse({}, json_dumps_params={'indent': 2}, safe=False)
+    return JsonResponse(json.dumps(asset), json_dumps_params={'indent': 2}, safe=False)
 
