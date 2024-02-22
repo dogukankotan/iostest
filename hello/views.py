@@ -3,7 +3,7 @@ from django.http import JsonResponse
 import json
 # Create your views here.
 
-asset = {
+assetjson = {
   "applinks": {
     "apps": [],
     "details": [
@@ -96,5 +96,5 @@ def index(request):
     return JsonResponse({}, json_dumps_params={'indent': 2}, safe=False)
 
 def asset(request):
-    return JsonResponse(json.dumps(asset), json_dumps_params={'indent': 2}, safe=False)
+    return JsonResponse(assetjson, json_dumps_params={'indent': 2}, safe=False)
 
